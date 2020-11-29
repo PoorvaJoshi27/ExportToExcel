@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ExportExcell.Models.BillModel>
+
+    <div class="container">
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th>B_no</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null)
+                {
+                    foreach (var item in Model)
+                    {
+                        <tr style="background-color:pink">
+                            <td>@item.B_no</td>
+                            <td>@item.Product</td>
+                            <td>@item.Price</td>
+                            <td>@item.Date</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+
+        <a href="@Url.Action("ExportToExcel","Home")">Export Excel</a>
+        <br /><br />
+
+        <input type="submit" value="Edit" class="btn btn-primary" onclick="location.href='@Url.Action("Display","Home")'" /> <br /><br />
+    </div>

@@ -1,0 +1,28 @@
+﻿@model ExportExcell.Models.BillModel
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update</h2>
+
+@using (Html.BeginForm("Update", "Home"))
+{<div class="container-fluid body-content">
+        <div class="row">
+            <div style="float:left; width:70%; padding-left:40px;">
+                <h3>Update Details</h3>
+                <br /><br />
+                Product :  @Html.TextBoxFor(m => m.Product)
+                <br /><br />
+                Price :  @Html.TextBoxFor(m => m.Price)
+                <br /><br />
+                Date :  @Html.TextBoxFor(m => m.Date)
+                <br /><br />
+                @ViewBag.Text
+                <br /><br />
+                <input type="submit" value="Update" />
+
+            </div>
+        </div>
+    </div>
+}
+

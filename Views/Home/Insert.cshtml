@@ -1,0 +1,27 @@
+﻿@model ExportExcell.Models.BillModel
+@{
+    ViewBag.Title = "Insert";
+}
+
+<h2>Insert</h2>
+
+@using (Html.BeginForm("Insert", "Home"))
+{<div class="container-fluid body-content">
+        <div class="row">
+
+            <div style="float:left; width:70%; padding-left:40px;">
+                <h3>Insert Details</h3>
+                <br /><br />
+                Product :  @Html.TextBoxFor(m => m.Product)
+                <br /><br />
+                Price :  @Html.TextBoxFor(m => m.Price)
+                <br /><br />
+                Date :  @Html.TextBoxFor(m => m.Date)
+                <br /><br />
+                <input type="submit" value="Add" />
+                @ViewBag.Text
+
+            </div>
+        </div>
+    </div>
+}

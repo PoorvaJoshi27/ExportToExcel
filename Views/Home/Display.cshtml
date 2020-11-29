@@ -1,0 +1,37 @@
+﻿@model ExportExcell.Models.DataModel
+@{
+    ViewBag.Title = "Display";
+}
+
+<h2>Display</h2>
+
+<div style="float:left; width:70%; padding-left:40px;">
+
+    <br />
+    <br />
+    <button onclick="location.href='@Url.Action("Insert", "Home")';return false;">Insert</button>
+    <br />
+    <table border="1" class="table table-bordered table-responsive table-hover">
+        <tr>
+            <th>Bill Number</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+        @foreach (var item in Model.list)
+        {
+            <tr>
+                <td>@item.B_no</td>
+                <td>@item.Product</td>
+                <td>@item.Price</td>
+                <td>@item.Date</td>
+                <td>
+                    <button onclick="location.href='@Url.Action("Update", "Home", new { id = item.B_no})';return false;">Update</button>
+
+                    <button onclick="location.href='@Url.Action("Delete", "Home", new { id = item.B_no})';return false;">Delete</button>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
